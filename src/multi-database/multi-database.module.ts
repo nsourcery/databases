@@ -3,15 +3,17 @@ import { TypeOrmModule, TypeOrmModuleOptions } from '@nestjs/typeorm';
 import { EnvironmentModule, EnvironmentService } from '@nsourcery/env';
 import { DatabaseConfig } from './database-config';
 
+import { ConfigService } from '@nestjs/config';
+
 @Module({})
 export class MultiDatabaseModule {
   static fromEnvironmentKeys(keys: Array<string>): DynamicModule {
     return {
       module: MultiDatabaseModule,
       imports: [
-        EnvironmentModule,
         ...keys.map((key, i) =>
           TypeOrmModule.forRootAsync({
+            imports: [EnvironmentModule],
             useFactory: (env: EnvironmentService) =>
               new DatabaseConfig(env, key) as TypeOrmModuleOptions,
             inject: [EnvironmentService],

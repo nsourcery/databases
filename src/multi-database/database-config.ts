@@ -23,6 +23,6 @@ export class DatabaseConfig {
     }[dbType];
     const dbConfig = new Instance(env, key);
 
-    Object.keys(dbConfig).forEach((x) => (this[x] = dbConfig[x]));
+    Object.keys(dbConfig).forEach((prop) => (this[prop] = dbConfig[prop]));
   }
 }

@@ -10,11 +10,15 @@ export class MultiDatabaseModule {
       module: MultiDatabaseModule,
       imports: [
         EnvironmentModule,
-        ...keys.map((key) =>
+        ...keys.map((key, i) =>
           TypeOrmModule.forRootAsync({
             useFactory: (env: EnvironmentService) =>
               new DatabaseConfig(env, key) as TypeOrmModuleOptions,
             inject: [EnvironmentService],
+            name:
+              keys.length > 1 && i >= 1
+                ? `${key.toLowerCase()}Conn`
+                : undefined,
           }),
         ),
       ],

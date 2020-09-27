@@ -7,7 +7,8 @@ export class PostgresConfig {
   autoLoadEntities: boolean = true;
 
   constructor(env: EnvironmentService, key: string) {
-    this.url = env.get(`${key}_URL`);
-    this.synchronize = env.get(`${key}_SYNCHRONIZE`) === 'true';
+    this.url = env.get(`${key}_DB_URL`);
+    this.synchronize =
+      env.get(`${key}_DB_SYNC`) === 'true' && env.get('SYNCHRONIZE') === 'true';
   }
 }

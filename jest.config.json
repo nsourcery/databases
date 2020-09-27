@@ -1,0 +1,13 @@
+{
+    "moduleFileExtensions": [
+        "js",
+        "json",
+        "ts"
+    ],
+    "testEnvironment": "node",
+    "testRegex": ".spec.ts$",
+    "verbose": true,
+    "transform": {
+        "^.+\\.(t|j)s$": "ts-jest"
+    }
+}

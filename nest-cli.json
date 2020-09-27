@@ -1,0 +1,16 @@
+{
+  "projects": {
+    "environment": {
+      "type": "library",
+      "root": "libs/environment",
+      "entryFile": "index",
+      "sourceRoot": "libs/environment/src",
+      "compilerOptions": {
+        "tsConfigPath": "libs/environment/tsconfig.lib.json"
+      }
+    }
+  },
+  "compilerOptions": {
+    "webpack": false
+  }
+}

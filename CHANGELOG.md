@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.3](https://github.com/nsourcery/databases/compare/v0.0.2...v0.0.3) (2020-09-27)
+
+
+### Bug Fixes
+
+* import environment module to be used with type orm module ([7987c2f](https://github.com/nsourcery/databases/commit/7987c2f0ed1d3e1a2ace9b488aded26f3a1b89bf))
+
 ### [0.0.2](https://github.com/nsourcery/databases/compare/v0.0.1...v0.0.2) (2020-09-27)
 
 

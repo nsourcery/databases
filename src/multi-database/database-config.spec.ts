@@ -38,6 +38,12 @@ describe(DatabaseConfig.name, () => {
     expect(instance).toHaveProperty('type');
     expect(instance).toHaveProperty('synchronize');
     expect(instance).toHaveProperty('autoLoadEntities');
+
+    expect(instance).not.toHaveProperty('username');
+    expect(instance).not.toHaveProperty('password');
+    expect(instance).not.toHaveProperty('connectString');
+    expect(instance).not.toHaveProperty('useNewUrlParser');
+    expect(instance).not.toHaveProperty('useUnifiedTopology');
   });
 
   it('should return mongodb db type', () => {
@@ -53,6 +59,12 @@ describe(DatabaseConfig.name, () => {
     expect(instance).toHaveProperty('type');
     expect(instance).toHaveProperty('synchronize');
     expect(instance).toHaveProperty('autoLoadEntities');
+    expect(instance).toHaveProperty('useNewUrlParser');
+    expect(instance).toHaveProperty('useUnifiedTopology');
+
+    expect(instance).not.toHaveProperty('connectString');
+    expect(instance).not.toHaveProperty('username');
+    expect(instance).not.toHaveProperty('password');
   });
 
   it('should return oracle db type', () => {
@@ -70,5 +82,9 @@ describe(DatabaseConfig.name, () => {
     expect(instance).toHaveProperty('password');
     expect(instance).toHaveProperty('synchronize');
     expect(instance).toHaveProperty('autoLoadEntities');
+
+    expect(instance).not.toHaveProperty('url');
+    expect(instance).not.toHaveProperty('useNewUrlParser');
+    expect(instance).not.toHaveProperty('useUnifiedTopology');
   });
 });

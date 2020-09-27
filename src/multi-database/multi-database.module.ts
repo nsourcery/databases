@@ -5,7 +5,7 @@ import { DatabaseConfig } from './database-config';
 
 @Module({})
 export class MultiDatabaseModule {
-  fromEnvironmentKeys(keys: Array<string>): DynamicModule {
+  static fromEnvironmentKeys(keys: Array<string>): DynamicModule {
     return {
       module: MultiDatabaseModule,
       imports: [
